@@ -2,12 +2,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Cutive&display=swap" rel="stylesheet">
     <title>To Do list</title>
     <style>
         body{
-            background-color:#FF6F91;
+            background-color: #FBEAFF;
             font-family: 'Cutive', serif;
         }
 
@@ -17,6 +18,7 @@
         }
 
         .container {
+            position: relative;
             max-width: 550px;
             margin:auto;
             background-color: #fff;
@@ -108,14 +110,30 @@
         }
 
         .button {
-            border: 1px solid #00C9A7;
-            background-color: #FAFAFA;
-            color: #00C9A7;
-            padding: 10px;
-            font-size: 14px;
-            border-radius: 5px;
+            padding: 1.3em 3em;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2.5px;
+            font-weight: 500;
+            color: #000;
+            background-color: #00C9A7;
+            border: none;
+            border-radius: 45px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease 0s;
             cursor: pointer;
-            text-decoration: none;
+            outline: none;
+        }
+
+        .button:hover {
+            background-color: #008BC9;
+            box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+            color: #000;
+            transform: translateY(-7px);
+        }
+
+        .button:active {
+            transform: translateY(-1px);
         }
 
         .label {
@@ -127,6 +145,14 @@
             padding: 20px;
         }
 
+        #footer {
+            bottom : 0;
+            height : 40px;
+            margin-top : 40px;
+            text-align: center;
+            vertical-align: middle;
+        }
+
     </style>
 </head>
 <body>
@@ -134,5 +160,7 @@
         {% block content %}
         {% endblock %}
     </div>
+    <footer id="footer"><p>Designed by Christophoros Feggaris | All rights reserved.</p></footer>
 </body>
 </html>
+
