@@ -15,7 +15,7 @@
 
 <div class="search-add-task">
     <form method="GET" class="search-bar">
-        <input type="text" name="search-area" value="{{ search_input }}">
+        <input type="text" name="search-area" value="{{ search_input }}" style="margin-right: 10px;">
         <input class="button" type="submit" value="Search">
     </form>
     <a class="add-task" href="{% url 'task-create' %}">&#43;</a>

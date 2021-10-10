@@ -1,161 +1,19 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css2?family=Cutive&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bungee+Shade&family=Cutive&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
     <title>To Do list</title>
-    <style>
-        body{
-            background-color: #FBEAFF;
-            font-family: 'Cutive', serif;
-        }
-
-        h1,
-        h2{
-            font-family: 'Bungee Shade', cursive;
-        }
-
-        .container {
-            position: relative;
-            max-width: 550px;
-            margin:auto;
-            background-color: #fff;
-            -webkit-box-shadow: 2px 2px 20px 4px rgba(0, 0, 255, .2);
-            box-shadow: 2px 2px 20px 4px rgba(0, 0, 255, .2);
-        }
-
-        .header-bar {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            border-radius: 5px 5px 0 0;
-            background-image: linear-gradient(to left, #008bc9, #009dce, #00aec9, #00bcbb, #00c9a7);
-        }
-
-        .header-bar a{
-            color: whitesmoke;
-            text-decoration: none;
-        }
-
-        .task-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: #fff;
-            border-top:1px solid rgb(218, 218, 218) ;
-        }
-
-        .task-title {
-            display: flex;
-        }
-
-        .task-title a{
-            text-decoration: none;
-            text-decoration: grey;
-            margin-left: 10px;
-        }
-
-        .task-complete-icon {
-            height: 20px;
-            width: 20px;
-            background-color: rgb(105, 192, 105);
-            border-radius: 50%;
-        }
-
-        .task-incomplete-icon {
-            height: 20px;
-            width: 20px;
-            background-color: rgb(218, 218, 218);
-            border-radius: 50%;
-        }
-
-        .delete-task {
-            text-decoration: none;
-            font-weight: 700;
-            color: #00C9A7;
-            font-size:22px;
-            line-height: 25px;
-        }
-
-        .search-add-task {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px;
-        }
-
-        .add-task {
-            text-decoration: none;
-            color: #00C9A7;
-            font-size: 42px;
-            text-shadow: 1px 1px #008BC9;
-            margin-right: 6px;
-        }
-
-        .search-bar {
-            display:flex;
-            margin-top:20px;
-        }
-
-        input[type=text],
-        input[type=password],
-        textarea {
-            border: 1px solid #00C9A7;
-            border-radius: 5px;
-            padding: 10px;
-            width: 90%;
-        }
-
-        .button {
-            padding: 1.3em 3em;
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2.5px;
-            font-weight: 500;
-            color: #000;
-            background-color: #00C9A7;
-            border: none;
-            border-radius: 45px;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease 0s;
-            cursor: pointer;
-            outline: none;
-        }
-
-        .button:hover {
-            background-color: #008BC9;
-            box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-            color: #000;
-            transform: translateY(-7px);
-        }
-
-        .button:active {
-            transform: translateY(-1px);
-        }
-
-        .label {
-            padding-top: 10px !important;
-            display: block;
-        }
-
-        .card-body {
-            padding: 20px;
-        }
-
-        #footer {
-            bottom : 0;
-            height : 40px;
-            margin-top : 40px;
-            text-align: center;
-            vertical-align: middle;
-        }
-
-    </style>
 </head>
 <body>
+    <header id="header"><p>To Do list App</p></header>
     <div class="container">
         {% block content %}
         {% endblock %}
