@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+%4q9$q^1^ipxy-%a)enpd9_^(4_0cyy@-lqmkk5e$=*4-i@x&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -77,9 +77,17 @@ WSGI_APPLICATION = 'todo_app.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'todo_task',
+        'USER': 'chrispg',
+        'PASSWORD': 'infochris123',
+        'HOST': '20.4.41.224',  # Set to the IP address or hostname of your PostgreSQL server
+        'PORT': '5432',  # Default is 5432
     }
 }
 
