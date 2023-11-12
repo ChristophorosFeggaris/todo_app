@@ -26,10 +26,16 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
+          pip install --upgrade pip
+          python -m pip install --upgrade setuptools
+          python -m pip install -r requirements.txt
         shell: bash
 
       - name: Install dependencies
         run: pip install -r requirements.txt
+
+      - name: Check Python version
+        run: python --version
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v2
