@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'todo_app.urls'
@@ -137,6 +138,6 @@ STATIC_ROOT = os.path.join(BASE_DIR,  'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-import os
-if 'WEBSITE_HOSTNAME' in os.environ: # Running on Azure
-    from .azure import *
+# import os
+# if 'WEBSITE_HOSTNAME' in os.environ: # Running on Azure
+#     from .azure import *
