@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-+%4q9$q^1^ipxy-%a)enpd9_^(4_0cyy@-lqmkk5e$=*4-i@x&'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -49,7 +49,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'todo_app.urls'
@@ -78,18 +77,11 @@ WSGI_APPLICATION = 'todo_app.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'todo_task',
-        'USER': 'chrispg',
-        'PASSWORD': 'infochris123',
-        'HOST': '20.4.41.224',  # Set to the IP address or hostname of your PostgreSQL server
-        'PORT': '5432',  # Default is 5432
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
+    
 }
 
 
@@ -138,6 +130,3 @@ STATIC_ROOT = os.path.join(BASE_DIR,  'static')
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# import os
-# if 'WEBSITE_HOSTNAME' in os.environ: # Running on Azure
-#     from .azure import *
